@@ -9,20 +9,19 @@ module.exports = {
     devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     watch: true,
     module: {
         rules: [
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
-                exclude: [/\.(spec|e2e)\.ts$/]
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
             },
             {
                 test: /\.css$/,
                 exclude: path.resolve(__dirname, 'app'),
-                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', loader: 'css-loader?sourceMap' })
             },
             {
                 test: /\.css$/,

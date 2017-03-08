@@ -1,21 +1,25 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "es2015",
         "target": "es5",
         "moduleResolution": "node",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "sourceMap": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "lib": [
-            "es6",
+            "es2015",
             "dom"
         ],
+        "types": ["node", "jasmine"],
         "suppressImplicitAnyIndexErrors": true,
         "outDir": "dist"
     },
     "exclude": [
         "dist",
         "node_modules"
-    ]
+    ],
+    "awesomeTypeScriptLoaderOptions": {
+        "useWebpackText": true
+    }
 }
