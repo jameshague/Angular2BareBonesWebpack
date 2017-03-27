@@ -1,0 +1,16 @@
+.good-pet{
+    color: green;
+    
+}
+
+.medium-pet{
+    color: yellowgreen;
+}
+
+.bad-pet{
+    color: red;
+}
+
+.fa-paw{
+    font-size: 3em;
+}

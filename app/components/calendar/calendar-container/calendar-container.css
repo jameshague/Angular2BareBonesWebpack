@@ -1,0 +1,32 @@
+.calendar-wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: stretch;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  background: cadetblue;
+  padding: 5px;
+  margin: 2px;
+  flex-grow: 1;
+  margin-top: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}

@@ -1,0 +1,38 @@
+<h1>Customer Details</h1>
+
+<div class="container">
+
+    <form #customerForm="ngForm" class="form-horizontal" novalidate>
+        <div class="form-group required" [class.has-error]="firstname.invalid && firstname.touched">
+            <label class="control-label" for="firstName">First Name</label>
+            <input #firstname="ngModel" class="form-control" required maxlength="100" type="text" id="firstName" name="firstName" [(ngModel)]="model.firstName">
+        </div>
+        <div class="form-group required" [class.has-error]="surname.invalid && surname.touched">
+            <label class="control-label" for="surname">Surname</label>
+            <input #surname="ngModel" class="form-control" required maxlength="100" type="text" id="surname" name="surname" [(ngModel)]="model.surname">
+        </div>
+        <div class="form-group" [class.has-error]="houseNumber.invalid && houseNumber.touched">
+            <label class="control-label" for="houseNumber">House Number</label>
+            <input #houseNumber="ngModel" class="form-control" maxlength="10" type="text" id="houseNumber" name="houseNumber" [(ngModel)]="model.houseNumber">
+        </div>
+        <div class="form-group required" [class.has-error]="postcode.invalid && postcode.touched">
+            <label class="control-label" for="postcode">Postcode</label>
+            <input #postcode="ngModel" class="form-control" required type="text" id="postcode" name="postcode" [(ngModel)]="model.postcode" ng-pattern="/^[a-z]{1,2}[0-9][a-z0-9]?\s?[0-9][a-z]{2}$/i" ng-minlength="5" ng-maxlength="8">
+        </div>
+        <div class="form-group required" [class.has-error]="contactNumber.invalid && contactNumber.touched">
+            <label class="control-label" for="contactNumber">Contact Number</label>
+            <input #contactNumber="ngModel" class="form-control" required pattern="^[0-9 ]*$" maxlength="30" type="text" id="contactNumber" name="contactNumber" [(ngModel)]="model.contactNumber">
+        </div>
+        <div class="form-group" [class.has-error]="alternativeContactName.invalid && alternativeContactName.touched">
+            <label class="control-label" for="alternativeContactName">Alternative Contact Name</label>
+            <input #alternativeContactName="ngModel" class="form-control" type="text" id="alternativeContactName" minlength="0" maxlength="100" name="alternativeContactName" [(ngModel)]="model.alternativeContactName">
+        </div>
+        <div class="form-group" [class.has-error]="alternativeContactNumber.invalid && alternativeContactNumber.touched">
+            <label class="control-label" for="alternativeContactNumber">Alternative Contact Number</label>
+            <input #alternativeContactNumber="ngModel" class="form-control" pattern="^[0-9 ]*$" maxlength="30" type="text" id="alternativeContactNumber" name="alternativeContactNumber" [(ngModel)]="model.alternativeContactNumber">
+        </div>
+
+        <button type="submit" class="btn btn-primary" [class.disabled]="!customerForm.valid">Save</button>
+        <button class="btn btn-default">Cancel</button>
+    </form>
+</div>

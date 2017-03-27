@@ -1,0 +1,9 @@
+html, body{
+    height: 100%;
+    background:#FAFAFA;
+}
+
+.form-group.required .control-label::after{
+content:"*";
+color:red;
+}

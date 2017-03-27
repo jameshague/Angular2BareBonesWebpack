@@ -1,0 +1,37 @@
+.root .header{
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding-left:20px;
+}
+
+.main{
+    position:absolute;
+    margin-top:70px;
+}
+
+ul#main-flex{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+ul#main-flex li#sidebar{
+    flex-grow: 1;
+    width: 150px;
+}
+
+ul #navigation{
+    list-style-type: none;
+    padding:100px 5px 5px 5px;
+    font-size: 2em;
+}
+
+ul#main-flex li#content{
+    flex-grow: 1;
+    padding: 15px 15px 10px 5px;
+}

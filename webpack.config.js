@@ -43,13 +43,15 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'index.html'
         }),
-        new ExtractTextPlugin('[name].css')
-
-        // ,new BundleAnalyzerPlugin({
-        //     analyzerMode: 'static'
-        // })
+        new ExtractTextPlugin('[name].css'),
+        
     ],
     resolve: {
         extensions: [".ts", ".js"]
     },
 };
+
+
+// new BundleAnalyzerPlugin({
+//             analyzerMode: 'static'
+//         })

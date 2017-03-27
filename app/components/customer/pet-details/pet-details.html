@@ -1,0 +1,41 @@
+<h1>Pet Details</h1>
+
+<div class="container">
+
+    <form #petform="ngForm" class="form-horizontal" novalidate>
+        <div class="form-group required" [class.has-error]="petName.invalid && petName.touched">
+            <label class="control-label" for="petName">Pet Name</label>
+            <input #petName="ngModel" class="form-control" required maxlength="100" type="text" id="petName" name="petName" [(ngModel)]="model.petName">
+        </div>
+        
+        <div [ngClass]="{'good-pet': model.temperament===rag.green, 'medium-pet': model.temperament===rag.amber, 'bad-pet': model.temperament===rag.red}">
+            <i class="fa fa-paw" aria-hidden="true"></i>
+        </div>
+
+Get breed list and put in searchable 
+
+        <div class="form-group required" [class.has-error]="breed.invalid && breed.touched">
+            <label class="control-label" for="breed">Breed</label>
+            <input #breed="ngModel" class="form-control" required maxlength="100" type="text" id="breed" name="breed" [(ngModel)]="model.breed">
+        </div>
+        <div class="form-group" [class.has-error]="generalNotes.invalid && generalNotes.touched">
+            <label class="control-label" for="generalNotes">General Notes</label>
+            <input #generalNotes="ngModel" class="form-control" maxlength="10" type="text" id="generalNotes" name="generalNotes" [(ngModel)]="model.generalNotes">
+        </div>
+        <div class="form-group required" [class.has-error]="historicServiceType.invalid && historicServiceType.touched">
+            <label class="control-label" for="historicServiceType">Service Type</label>
+            <input #historicServiceType="ngModel" class="form-control" required type="text" id="historicServiceType" name="historicServiceType" [(ngModel)]="model.historicServiceType" ng-pattern="/^[a-z]{1,2}[0-9][a-z0-9]?\s?[0-9][a-z]{2}$/i" ng-minlength="5" ng-maxlength="8">
+        </div>
+        <div class="form-group required" [class.has-error]="serviceNotes.invalid && serviceNotes.touched">
+            <label class="control-label" for="serviceNotes">Service Notes</label>
+            <input #serviceNotes="ngModel" class="form-control" required pattern="^[0-9 ]*$" maxlength="30" type="text" id="serviceNotes" name="serviceNotes" [(ngModel)]="model.serviceNotes">
+        </div>
+           <div class="form-group required" [class.has-error]="medicalNotes.invalid && medicalNotes.touched">
+            <label class="control-label" for="medicalNotes">Medical Notes</label>
+            <input #medicalNotes="ngModel" class="form-control" required pattern="^[0-9 ]*$" maxlength="30" type="text" id="medicalNotes" name="medicalNotes" [(ngModel)]="model.medicalNotes">
+        </div>
+      
+        <button type="submit" class="btn btn-primary" [class.disabled]="!petform.valid">Save</button>
+        <button class="btn btn-default">Cancel</button>
+    </form>
+</div>
